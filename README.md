@@ -141,7 +141,7 @@ If you want to set DNS in fedora.
 
 3. Open the Settings app and go to Network/wifi. Click on the settings icon for your connected network. On the IPv4 and IPv6 tabs, turn off Automatic using the radio button next to DNS, and leave the DNS field blank, then click on Apply.  Disable and enable the network using the on/off button to make sure it takes effect.
 
-![ipv4.png](/var/home/jackfruit/Documents/Markdown%20Notes/ipv4.png)
+![ipv4.png](./ipv4.png)
 
 4. Edit the following file with nano or your favorite text editor:
 	* First copy the config file: `cp /usr/lib/systemd/resolved.conf /etc/systemd/` and  then edit it: `sudo nano /etc/systemd/resolved.conf`
@@ -264,7 +264,7 @@ sudo firewall-cmd --set-default-zone=FedoraWorkstation
 
 Source: [Secureblue](https://github.com/secureblue/Trivalent)
 
-<img src="/var/home/jackfruit/Documents/Markdown%20Notes/trivalent.png" width="100"> 
+<img src="./trivalent.png" width="100"> 
 
 By default fedora includes *Firefox* which is **not** recommended as they're currently much more vulnerable to exploitation and inherently add a huge amount of attack surface compared to **Chromium**. [Why?](https://grapheneos.org/usage#web-browsing)
 
