@@ -107,7 +107,7 @@ sudo dnf install mesa-va-drivers-freeworld
 sudo dnf swap mesa-vulkan-drivers{,-freeworld}
 ```
 
-**for steam or alikes** (AMD)
+**for steam or alikes** (AMD only)
 
 ```
 sudo dnf install mesa-va-drivers-freeworld.i686
