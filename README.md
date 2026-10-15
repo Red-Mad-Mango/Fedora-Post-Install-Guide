@@ -284,6 +284,54 @@ sudo dnf -y install trivalent
 
 ***
 
+## Optimizations
+
+#### Firefox default start page
+
+If you are using Firefox you should removes fedora start page from Firefox: 
+
+```
+sudo rm -f /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js
+```
+  
+#### Disable GNOME Software from startup 
+
+```
+mkdir -p ~/.config/autostart
+```
+
+```
+cp /usr/share/applications/org.gnome.Software.desktop ~/.config/autostart/
+```
+
+```
+echo "X-GNOME-Autostart-enabled=false" >> ~/.config/autostart/org.gnome.Software.desktop
+```
+
+Also disable GNOME Software in **search section** in settings, to do that:
+
+1. Go to _settings_ -> _search_
+2. In _search results_ toggle off Software
+
+You can also _disable other apps_ that you don't need, like firefox, characters, calculator etc.
+
+#### Disable NetworkManager-wait-online.service
+
+Disabling `NetworkManager-wait-online.service` on Fedora can reduce boot time by skipping the wait for network readiness, but it may cause services that depend on network-online.target to fail if they require network access at startup.
+
+```
+sudo systemctl disable NetworkManager-wait-online.service
+```
+
+If you find that disabling the service causes issues, you can re-enable it with:
+
+```
+sudo systemctl enable NetworkManager-wait-online.service
+```
+
+
+***
+
 ## Reboot 
 
 After all the above make sure you have **rebooted** you computer to apply changes we made, before using it.
